@@ -14,13 +14,12 @@
 		E0B40C022BE50F2300EBA791 /* SampleListDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C012BE50F2300EBA791 /* SampleListDetailTests.swift */; };
 		E0B40C0C2BE50F2300EBA791 /* SampleListDetailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C0B2BE50F2300EBA791 /* SampleListDetailUITests.swift */; };
 		E0B40C0E2BE50F2300EBA791 /* SampleListDetailUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C0D2BE50F2300EBA791 /* SampleListDetailUITestsLaunchTests.swift */; };
-		E0B40C1C2BE510FC00EBA791 /* NetworkDataFetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C1B2BE510FC00EBA791 /* NetworkDataFetchManager.swift */; };
-		E0B40C1E2BE5111500EBA791 /* Rounting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C1D2BE5111500EBA791 /* Rounting.swift */; };
-		E0B40C202BE5117300EBA791 /* DataFetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C1F2BE5117300EBA791 /* DataFetchManager.swift */; };
-		E0B40C232BE512C400EBA791 /* PropertyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C222BE512C400EBA791 /* PropertyService.swift */; };
-		E0B40C252BE512F100EBA791 /* PropertyListParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C242BE512F100EBA791 /* PropertyListParameter.swift */; };
-		E0B40C272BE513CC00EBA791 /* APIPropertyListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C262BE513CC00EBA791 /* APIPropertyListResponse.swift */; };
-		E0B40C292BE5150000EBA791 /* PropertyParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C282BE5150000EBA791 /* PropertyParameter.swift */; };
+		E0B40C2C2BE516E500EBA791 /* PropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C2B2BE516E500EBA791 /* PropertyView.swift */; };
+		E0B40C312BE5456100EBA791 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C302BE5456100EBA791 /* HTTPClient.swift */; };
+		E0B40C332BE5457A00EBA791 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C322BE5457A00EBA791 /* RemoteFeedLoader.swift */; };
+		E0B40C362BE545B200EBA791 /* PropertyFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C352BE545B200EBA791 /* PropertyFeedLoader.swift */; };
+		E0B40C382BE545D700EBA791 /* FeedProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C372BE545D700EBA791 /* FeedProperty.swift */; };
+		E0B40C3A2BE5473500EBA791 /* FeedPropertyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C392BE5473500EBA791 /* FeedPropertyMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,13 +51,12 @@
 		E0B40C072BE50F2300EBA791 /* SampleListDetailUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleListDetailUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B40C0B2BE50F2300EBA791 /* SampleListDetailUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleListDetailUITests.swift; sourceTree = "<group>"; };
 		E0B40C0D2BE50F2300EBA791 /* SampleListDetailUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleListDetailUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E0B40C1B2BE510FC00EBA791 /* NetworkDataFetchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetchManager.swift; sourceTree = "<group>"; };
-		E0B40C1D2BE5111500EBA791 /* Rounting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rounting.swift; sourceTree = "<group>"; };
-		E0B40C1F2BE5117300EBA791 /* DataFetchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchManager.swift; sourceTree = "<group>"; };
-		E0B40C222BE512C400EBA791 /* PropertyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyService.swift; sourceTree = "<group>"; };
-		E0B40C242BE512F100EBA791 /* PropertyListParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListParameter.swift; sourceTree = "<group>"; };
-		E0B40C262BE513CC00EBA791 /* APIPropertyListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPropertyListResponse.swift; sourceTree = "<group>"; };
-		E0B40C282BE5150000EBA791 /* PropertyParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyParameter.swift; sourceTree = "<group>"; };
+		E0B40C2B2BE516E500EBA791 /* PropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyView.swift; sourceTree = "<group>"; };
+		E0B40C302BE5456100EBA791 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		E0B40C322BE5457A00EBA791 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
+		E0B40C352BE545B200EBA791 /* PropertyFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyFeedLoader.swift; sourceTree = "<group>"; };
+		E0B40C372BE545D700EBA791 /* FeedProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedProperty.swift; sourceTree = "<group>"; };
+		E0B40C392BE5473500EBA791 /* FeedPropertyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPropertyMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +107,9 @@
 		E0B40BEE2BE50F2200EBA791 /* SampleListDetail */ = {
 			isa = PBXGroup;
 			children = (
-				E0B40C212BE5129600EBA791 /* Services */,
-				E0B40C1A2BE510DD00EBA791 /* Networking */,
+				E0B40C342BE5459700EBA791 /* Property feature */,
+				E0B40C2F2BE5455400EBA791 /* Property API */,
+				E0B40C2A2BE516CB00EBA791 /* View */,
 				E0B40BEF2BE50F2200EBA791 /* SampleListDetailApp.swift */,
 				E0B40BF12BE50F2200EBA791 /* ContentView.swift */,
 				E0B40BF32BE50F2300EBA791 /* Assets.xcassets */,
@@ -145,25 +144,31 @@
 			path = SampleListDetailUITests;
 			sourceTree = "<group>";
 		};
-		E0B40C1A2BE510DD00EBA791 /* Networking */ = {
+		E0B40C2A2BE516CB00EBA791 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E0B40C1B2BE510FC00EBA791 /* NetworkDataFetchManager.swift */,
-				E0B40C1D2BE5111500EBA791 /* Rounting.swift */,
-				E0B40C1F2BE5117300EBA791 /* DataFetchManager.swift */,
+				E0B40C2B2BE516E500EBA791 /* PropertyView.swift */,
 			);
-			path = Networking;
+			path = View;
 			sourceTree = "<group>";
 		};
-		E0B40C212BE5129600EBA791 /* Services */ = {
+		E0B40C2F2BE5455400EBA791 /* Property API */ = {
 			isa = PBXGroup;
 			children = (
-				E0B40C222BE512C400EBA791 /* PropertyService.swift */,
-				E0B40C242BE512F100EBA791 /* PropertyListParameter.swift */,
-				E0B40C262BE513CC00EBA791 /* APIPropertyListResponse.swift */,
-				E0B40C282BE5150000EBA791 /* PropertyParameter.swift */,
+				E0B40C302BE5456100EBA791 /* HTTPClient.swift */,
+				E0B40C322BE5457A00EBA791 /* RemoteFeedLoader.swift */,
+				E0B40C392BE5473500EBA791 /* FeedPropertyMapper.swift */,
 			);
-			path = Services;
+			path = "Property API";
+			sourceTree = "<group>";
+		};
+		E0B40C342BE5459700EBA791 /* Property feature */ = {
+			isa = PBXGroup;
+			children = (
+				E0B40C352BE545B200EBA791 /* PropertyFeedLoader.swift */,
+				E0B40C372BE545D700EBA791 /* FeedProperty.swift */,
+			);
+			path = "Property feature";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,15 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0B40C292BE5150000EBA791 /* PropertyParameter.swift in Sources */,
-				E0B40C1C2BE510FC00EBA791 /* NetworkDataFetchManager.swift in Sources */,
+				E0B40C382BE545D700EBA791 /* FeedProperty.swift in Sources */,
+				E0B40C2C2BE516E500EBA791 /* PropertyView.swift in Sources */,
+				E0B40C3A2BE5473500EBA791 /* FeedPropertyMapper.swift in Sources */,
+				E0B40C312BE5456100EBA791 /* HTTPClient.swift in Sources */,
 				E0B40BF22BE50F2200EBA791 /* ContentView.swift in Sources */,
-				E0B40C272BE513CC00EBA791 /* APIPropertyListResponse.swift in Sources */,
 				E0B40BF02BE50F2200EBA791 /* SampleListDetailApp.swift in Sources */,
-				E0B40C1E2BE5111500EBA791 /* Rounting.swift in Sources */,
-				E0B40C252BE512F100EBA791 /* PropertyListParameter.swift in Sources */,
-				E0B40C232BE512C400EBA791 /* PropertyService.swift in Sources */,
-				E0B40C202BE5117300EBA791 /* DataFetchManager.swift in Sources */,
+				E0B40C332BE5457A00EBA791 /* RemoteFeedLoader.swift in Sources */,
+				E0B40C362BE545B200EBA791 /* PropertyFeedLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
