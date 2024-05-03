@@ -20,6 +20,7 @@
 		E0B40C362BE545B200EBA791 /* PropertyFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C352BE545B200EBA791 /* PropertyFeedLoader.swift */; };
 		E0B40C382BE545D700EBA791 /* FeedProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C372BE545D700EBA791 /* FeedProperty.swift */; };
 		E0B40C3A2BE5473500EBA791 /* FeedPropertyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C392BE5473500EBA791 /* FeedPropertyMapper.swift */; };
+		E0B40C3C2BE5616F00EBA791 /* FeedProperty+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C3B2BE5616F00EBA791 /* FeedProperty+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		E0B40C352BE545B200EBA791 /* PropertyFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyFeedLoader.swift; sourceTree = "<group>"; };
 		E0B40C372BE545D700EBA791 /* FeedProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedProperty.swift; sourceTree = "<group>"; };
 		E0B40C392BE5473500EBA791 /* FeedPropertyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPropertyMapper.swift; sourceTree = "<group>"; };
+		E0B40C3B2BE5616F00EBA791 /* FeedProperty+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedProperty+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			children = (
 				E0B40C352BE545B200EBA791 /* PropertyFeedLoader.swift */,
 				E0B40C372BE545D700EBA791 /* FeedProperty.swift */,
+				E0B40C3B2BE5616F00EBA791 /* FeedProperty+Ext.swift */,
 			);
 			path = "Property feature";
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0B40C382BE545D700EBA791 /* FeedProperty.swift in Sources */,
+				E0B40C3C2BE5616F00EBA791 /* FeedProperty+Ext.swift in Sources */,
 				E0B40C2C2BE516E500EBA791 /* PropertyView.swift in Sources */,
 				E0B40C3A2BE5473500EBA791 /* FeedPropertyMapper.swift in Sources */,
 				E0B40C312BE5456100EBA791 /* HTTPClient.swift in Sources */,

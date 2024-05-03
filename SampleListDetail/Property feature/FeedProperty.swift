@@ -7,6 +7,10 @@
 
 import Foundation
 
+/// FeedPropertyType is a presentation model for PropertyView helping
+///    -keeps APIPropery private and decopled from client code
+///    -has additonal formatting logic ready to be used by view.
+///
 public enum FeedPropertyType: String, Codable {
     case highlightedProperty
     case property
@@ -26,19 +30,31 @@ public struct FeedProperty: Hashable {
     public let ratingFormatted: String?
     public let averagePrice: String?
     
-    public init(type: FeedPropertyType, id: String, askingPrice: Int?, municipality: String?, area: String, livingArea: Int?, numberOfRooms: Int?, streetAddress: String?, image: String, monthlyFee: Int?, ratingFormatted: String?, averagePrice: Int?) {
+    public init(type: FeedPropertyType, 
+                id: String,
+                askingPrice: Int? = nil,
+                municipality: String? = nil,
+                area: String,
+                livingArea: Int? = nil,
+                numberOfRooms: Int? = nil,
+                streetAddress: String? = nil,
+                image: String,
+                monthlyFee: Int? = nil,
+                ratingFormatted: String? = nil,
+                averagePrice: Int? = nil) {
         
         self.type = type
         self.id = id
-        if let intValue = askingPrice {
-            self.askingPrice = "\(intValue) SEK"
+
+        if let intValue = askingPrice, let formattedPrice = NumberFormatter.spaceGroupingFormatter().string(from: NSNumber(value: intValue)) {
+            self.askingPrice = "\(formattedPrice) SEK"
         } else {
             self.askingPrice = nil
         }
         if let municipality = municipality {
             self.municipalityArea = "\(municipality), \(area)"
         } else {
-            municipalityArea = nil
+            municipalityArea = area
         }
         if let intValue = livingArea {
             self.livingArea = "\(intValue) m²"
@@ -55,31 +71,25 @@ public struct FeedProperty: Hashable {
         self.streetAddress = streetAddress
         self.image = URL(string: image)!
         self.monthlyFee = monthlyFee
-        self.ratingFormatted = ratingFormatted
-        if let intValue = averagePrice {
-            self.averagePrice = "\(intValue) SEK"
+        
+        if let rating = ratingFormatted {
+            self.ratingFormatted = "Rating: \(rating)"
+        } else {
+            self.ratingFormatted = nil
+        }
+        if let intValue = averagePrice, let formattedPrice = NumberFormatter.spaceGroupingFormatter().string(from: NSNumber(value: intValue)) {
+            self.averagePrice = "Average price: \(formattedPrice) m²"
         } else {
             self.averagePrice = nil
         }
     }
-   
 }
-extension FeedProperty {
-    static func mockHighlightedProperty() -> FeedProperty {
-        return FeedProperty(type: .highlightedProperty,
-                            id: "123",
-                            askingPrice: 200000,
-                            municipality: "Stockholm",
-                            area: "Nedre Gärdet",
-                            livingArea: 125,
-                            numberOfRooms: 5,
-                            streetAddress: "Gällivare kommun",
-                            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Hus_i_svarttorp.jpg/800px-Hus_i_svarttorp.jpg",
-                            monthlyFee: 4100,
-                            ratingFormatted: "4.5/5",
-                            averagePrice: 50100)
+
+extension NumberFormatter {
+    static func spaceGroupingFormatter() -> NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = " "
+        return formatter
     }
 }
-
-
-
