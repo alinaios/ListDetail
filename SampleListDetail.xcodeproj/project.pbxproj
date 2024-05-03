@@ -14,6 +14,13 @@
 		E0B40C022BE50F2300EBA791 /* SampleListDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C012BE50F2300EBA791 /* SampleListDetailTests.swift */; };
 		E0B40C0C2BE50F2300EBA791 /* SampleListDetailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C0B2BE50F2300EBA791 /* SampleListDetailUITests.swift */; };
 		E0B40C0E2BE50F2300EBA791 /* SampleListDetailUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C0D2BE50F2300EBA791 /* SampleListDetailUITestsLaunchTests.swift */; };
+		E0B40C1C2BE510FC00EBA791 /* NetworkDataFetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C1B2BE510FC00EBA791 /* NetworkDataFetchManager.swift */; };
+		E0B40C1E2BE5111500EBA791 /* Rounting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C1D2BE5111500EBA791 /* Rounting.swift */; };
+		E0B40C202BE5117300EBA791 /* DataFetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C1F2BE5117300EBA791 /* DataFetchManager.swift */; };
+		E0B40C232BE512C400EBA791 /* PropertyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C222BE512C400EBA791 /* PropertyService.swift */; };
+		E0B40C252BE512F100EBA791 /* PropertyListParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C242BE512F100EBA791 /* PropertyListParameter.swift */; };
+		E0B40C272BE513CC00EBA791 /* APIPropertyListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C262BE513CC00EBA791 /* APIPropertyListResponse.swift */; };
+		E0B40C292BE5150000EBA791 /* PropertyParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C282BE5150000EBA791 /* PropertyParameter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,13 @@
 		E0B40C072BE50F2300EBA791 /* SampleListDetailUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleListDetailUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B40C0B2BE50F2300EBA791 /* SampleListDetailUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleListDetailUITests.swift; sourceTree = "<group>"; };
 		E0B40C0D2BE50F2300EBA791 /* SampleListDetailUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleListDetailUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E0B40C1B2BE510FC00EBA791 /* NetworkDataFetchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetchManager.swift; sourceTree = "<group>"; };
+		E0B40C1D2BE5111500EBA791 /* Rounting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rounting.swift; sourceTree = "<group>"; };
+		E0B40C1F2BE5117300EBA791 /* DataFetchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchManager.swift; sourceTree = "<group>"; };
+		E0B40C222BE512C400EBA791 /* PropertyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyService.swift; sourceTree = "<group>"; };
+		E0B40C242BE512F100EBA791 /* PropertyListParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListParameter.swift; sourceTree = "<group>"; };
+		E0B40C262BE513CC00EBA791 /* APIPropertyListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPropertyListResponse.swift; sourceTree = "<group>"; };
+		E0B40C282BE5150000EBA791 /* PropertyParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyParameter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +109,8 @@
 		E0B40BEE2BE50F2200EBA791 /* SampleListDetail */ = {
 			isa = PBXGroup;
 			children = (
+				E0B40C212BE5129600EBA791 /* Services */,
+				E0B40C1A2BE510DD00EBA791 /* Networking */,
 				E0B40BEF2BE50F2200EBA791 /* SampleListDetailApp.swift */,
 				E0B40BF12BE50F2200EBA791 /* ContentView.swift */,
 				E0B40BF32BE50F2300EBA791 /* Assets.xcassets */,
@@ -127,6 +143,27 @@
 				E0B40C0D2BE50F2300EBA791 /* SampleListDetailUITestsLaunchTests.swift */,
 			);
 			path = SampleListDetailUITests;
+			sourceTree = "<group>";
+		};
+		E0B40C1A2BE510DD00EBA791 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E0B40C1B2BE510FC00EBA791 /* NetworkDataFetchManager.swift */,
+				E0B40C1D2BE5111500EBA791 /* Rounting.swift */,
+				E0B40C1F2BE5117300EBA791 /* DataFetchManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E0B40C212BE5129600EBA791 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E0B40C222BE512C400EBA791 /* PropertyService.swift */,
+				E0B40C242BE512F100EBA791 /* PropertyListParameter.swift */,
+				E0B40C262BE513CC00EBA791 /* APIPropertyListResponse.swift */,
+				E0B40C282BE5150000EBA791 /* PropertyParameter.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +296,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0B40C292BE5150000EBA791 /* PropertyParameter.swift in Sources */,
+				E0B40C1C2BE510FC00EBA791 /* NetworkDataFetchManager.swift in Sources */,
 				E0B40BF22BE50F2200EBA791 /* ContentView.swift in Sources */,
+				E0B40C272BE513CC00EBA791 /* APIPropertyListResponse.swift in Sources */,
 				E0B40BF02BE50F2200EBA791 /* SampleListDetailApp.swift in Sources */,
+				E0B40C1E2BE5111500EBA791 /* Rounting.swift in Sources */,
+				E0B40C252BE512F100EBA791 /* PropertyListParameter.swift in Sources */,
+				E0B40C232BE512C400EBA791 /* PropertyService.swift in Sources */,
+				E0B40C202BE5117300EBA791 /* DataFetchManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
