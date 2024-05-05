@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PropertyView: View {
-    
     @State var model: FeedProperty
     
     var body: some View {
@@ -90,12 +89,15 @@ struct PropertyView: View {
                 switch phase {
                 case .success(let image):
                     image.resizable()
-                        .scaledToFit()
+                        .scaledToFill()
+                        .frame(maxWidth: .infinity, maxHeight: 180)
+                        .clipped()
                 default:
                     Image(systemName: "globe")
                 }
             }
         }
+    
 }
 struct PropertyView_Previews: PreviewProvider {
     static var previews: some View {

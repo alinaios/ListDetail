@@ -32,9 +32,15 @@ struct PropertyListView: View {
         return NavigationStack {
             VStack {
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 12, content: {
-                        ForEach(list) { currentItem in
-                            elementView(property: currentItem)
+                    VStack(alignment: .leading, spacing: 20, content: {
+                        ForEach(list.indices, id: \.self) { index in
+                            if index == 0 {
+                                NavigationLink(destination: DetailPropertyView(viewModel: detailViewModel)) {
+                                    elementView(property: list[index])
+                                }
+                            } else {
+                                elementView(property: list[index])
+                            }
                         }
                     }).padding()
                 }
@@ -42,13 +48,8 @@ struct PropertyListView: View {
         }
     }
     
-    
     private func elementView(property: FeedProperty) -> some View {
-        NavigationLink {
-            EmptyView()
-        } label: {
-            PropertyView(model: property)
-        }
+        PropertyView(model: property)
     }
 
     private func emptyResultsView() -> some View {
@@ -57,7 +58,7 @@ struct PropertyListView: View {
 
     private func errorView(error: Error) -> some View {
         VStack(alignment: .center, spacing: 12, content: {
-            Text("Failed to load data. Tap 'Retry' to try again." )
+            Text("Failed to load data." )
             Button("Retry") {
                 viewModel.send(event: .onAppear)
             }

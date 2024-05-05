@@ -25,6 +25,8 @@
 		E0B40C402BE7B3D300EBA791 /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C3F2BE7B3D300EBA791 /* CompositionRoot.swift */; };
 		E0B40C422BE7B54F00EBA791 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C412BE7B54F00EBA791 /* URLSessionHTTPClient.swift */; };
 		E0B40C442BE7B71C00EBA791 /* PropertyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C432BE7B71C00EBA791 /* PropertyListViewModel.swift */; };
+		E0B40C462BE7CD4D00EBA791 /* DetailPropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C452BE7CD4D00EBA791 /* DetailPropertyView.swift */; };
+		E0B40C522BE7ED5400EBA791 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C512BE7ED5400EBA791 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		E0B40C3F2BE7B3D300EBA791 /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
 		E0B40C412BE7B54F00EBA791 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		E0B40C432BE7B71C00EBA791 /* PropertyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListViewModel.swift; sourceTree = "<group>"; };
+		E0B40C452BE7CD4D00EBA791 /* DetailPropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPropertyView.swift; sourceTree = "<group>"; };
+		E0B40C512BE7ED5400EBA791 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,9 +162,8 @@
 		E0B40C2A2BE516CB00EBA791 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E0B40C2B2BE516E500EBA791 /* PropertyView.swift */,
-				E0B40C3D2BE7B2C000EBA791 /* PropertyListView.swift */,
-				E0B40C432BE7B71C00EBA791 /* PropertyListViewModel.swift */,
+				E0B40C472BE7D05C00EBA791 /* List */,
+				E0B40C482BE7D06500EBA791 /* Detail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,11 +182,46 @@
 		E0B40C342BE5459700EBA791 /* Property feature */ = {
 			isa = PBXGroup;
 			children = (
+				E0B40C4A2BE7E6B000EBA791 /* Property Detail */,
+				E0B40C492BE7E6A400EBA791 /* Property Feed */,
+			);
+			path = "Property feature";
+			sourceTree = "<group>";
+		};
+		E0B40C472BE7D05C00EBA791 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				E0B40C2B2BE516E500EBA791 /* PropertyView.swift */,
+				E0B40C3D2BE7B2C000EBA791 /* PropertyListView.swift */,
+				E0B40C432BE7B71C00EBA791 /* PropertyListViewModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		E0B40C482BE7D06500EBA791 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E0B40C452BE7CD4D00EBA791 /* DetailPropertyView.swift */,
+				E0B40C512BE7ED5400EBA791 /* DetailViewModel.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		E0B40C492BE7E6A400EBA791 /* Property Feed */ = {
+			isa = PBXGroup;
+			children = (
 				E0B40C352BE545B200EBA791 /* PropertyFeedLoader.swift */,
 				E0B40C372BE545D700EBA791 /* FeedProperty.swift */,
 				E0B40C3B2BE5616F00EBA791 /* FeedProperty+Ext.swift */,
 			);
-			path = "Property feature";
+			path = "Property Feed";
+			sourceTree = "<group>";
+		};
+		E0B40C4A2BE7E6B000EBA791 /* Property Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Property Detail";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,9 +363,11 @@
 				E0B40BF02BE50F2200EBA791 /* SampleListDetailApp.swift in Sources */,
 				E0B40C402BE7B3D300EBA791 /* CompositionRoot.swift in Sources */,
 				E0B40C442BE7B71C00EBA791 /* PropertyListViewModel.swift in Sources */,
+				E0B40C462BE7CD4D00EBA791 /* DetailPropertyView.swift in Sources */,
 				E0B40C3E2BE7B2C000EBA791 /* PropertyListView.swift in Sources */,
 				E0B40C332BE5457A00EBA791 /* RemoteFeedLoader.swift in Sources */,
 				E0B40C362BE545B200EBA791 /* PropertyFeedLoader.swift in Sources */,
+				E0B40C522BE7ED5400EBA791 /* DetailViewModel.swift in Sources */,
 				E0B40C422BE7B54F00EBA791 /* URLSessionHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

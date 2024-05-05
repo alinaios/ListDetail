@@ -28,7 +28,9 @@ enum FeedPropertyMapper {
         let monthlyFee: Int?
         let ratingFormatted: String?
         let averagePrice: Int?
-        
+        let description: String?
+        let patio: String?
+
         enum PropertyType: String, Codable {
             case HighlightedProperty
             case Property
@@ -50,18 +52,29 @@ enum FeedPropertyMapper {
                                 image: image,
                                 monthlyFee: monthlyFee,
                                 ratingFormatted: ratingFormatted,
-                                averagePrice: averagePrice)
+                                averagePrice: averagePrice,
+                                description: description,
+                                patio: patio, 
+                                daysSincePublish: daysSincePublish)
         }
     }
     
     private static var OK_200: Int { return 200 }
     
-    static func map(_ data: Data, from response: HTTPURLResponse) -> PropertyFeedLoader.Result {
+    static func map(_ data: Data, from response: HTTPURLResponse) -> PropertyFeedLoader.FeedResult {
         guard response.statusCode == OK_200,
               let root = try? JSONDecoder().decode(Root.self, from: data) else {
             return .failure(RemoteFeedLoader.Error.invalidData)
         }
         return .success(root.feed)
+    }
+    
+    static func mapSingleProperty(_ data: Data, from response: HTTPURLResponse) -> PropertyFeedLoader.DetailResult {
+        guard response.statusCode == OK_200,
+              let root = try? JSONDecoder().decode(APIProperty.self, from: data) else {
+            return .failure(RemoteFeedLoader.Error.invalidData)
+        }
+        return .success(root.item)
     }
 }
 

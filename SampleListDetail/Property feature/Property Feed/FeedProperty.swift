@@ -29,8 +29,11 @@ public struct FeedProperty: Hashable, Identifiable {
     public let monthlyFee: Int?
     public let ratingFormatted: String?
     public let averagePrice: String?
+    public let description: String?
+    public let patio: String?
+    public let daysSincePublish: Int?
     
-    public init(type: FeedPropertyType, 
+    public init(type: FeedPropertyType,
                 id: String,
                 askingPrice: Int? = nil,
                 municipality: String? = nil,
@@ -41,10 +44,16 @@ public struct FeedProperty: Hashable, Identifiable {
                 image: String,
                 monthlyFee: Int? = nil,
                 ratingFormatted: String? = nil,
-                averagePrice: Int? = nil) {
+                averagePrice: Int? = nil,
+                description: String? = nil,
+                patio: String? = nil,
+                daysSincePublish: Int? = nil) {
         
         self.type = type
         self.id = id
+        self.description = description
+        self.patio = patio
+        self.daysSincePublish = daysSincePublish
 
         if let intValue = askingPrice, let formattedPrice = NumberFormatter.spaceGroupingFormatter().string(from: NSNumber(value: intValue)) {
             self.askingPrice = "\(formattedPrice) SEK"

@@ -8,6 +8,7 @@
 import Foundation
 
 public final class RemoteFeedLoader: PropertyFeedLoader {
+    
     private let url: URL
     private let client: HTTPClient
 
@@ -21,13 +22,26 @@ public final class RemoteFeedLoader: PropertyFeedLoader {
         self.client = client
     }
 
-    public func load(completion: @escaping (PropertyFeedLoader.Result) -> Void) {
+    public func load(completion: @escaping (PropertyFeedLoader.FeedResult) -> Void) {
         client.get(from: url) { [weak self] response in
             guard self != nil else { return }
 
             switch response {
             case let .success((data, response)):
                 completion(FeedPropertyMapper.map(data, from: response))
+            case .failure:
+                completion(.failure(RemoteFeedLoader.Error.connectivity))
+            }
+        }
+    }
+    
+    public func load(completion: @escaping (PropertyFeedLoader.DetailResult) -> Void) {
+        client.get(from: url) { [weak self] response in
+            guard self != nil else { return }
+
+            switch response {
+            case let .success((data, response)):
+                completion(FeedPropertyMapper.mapSingleProperty(data, from: response))
             case .failure:
                 completion(.failure(RemoteFeedLoader.Error.connectivity))
             }
