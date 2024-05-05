@@ -35,8 +35,8 @@ enum FeedPropertyMapper {
             case Area
         }
         
-        func mapPropertyType(_ propertyType: PropertyType) -> FeedPropertyType {
-            return FeedPropertyType(rawValue: propertyType.rawValue.lowercased()) ?? .property
+        private func mapPropertyType(_ propertyType: PropertyType) -> FeedPropertyType {
+            return FeedPropertyType(rawValue: propertyType.rawValue.lowercasedFirstCharacter()) ?? .area
         }
         
         var item: FeedProperty {
@@ -62,5 +62,12 @@ enum FeedPropertyMapper {
             return .failure(RemoteFeedLoader.Error.invalidData)
         }
         return .success(root.feed)
+    }
+}
+
+extension String {
+    func lowercasedFirstCharacter() -> String {
+        guard let firstCharacter = self.first else { return self }
+        return String(firstCharacter).lowercased() + dropFirst()
     }
 }

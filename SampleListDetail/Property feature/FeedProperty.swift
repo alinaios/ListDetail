@@ -17,7 +17,7 @@ public enum FeedPropertyType: String, Codable {
     case area
 }
 
-public struct FeedProperty: Hashable {
+public struct FeedProperty: Hashable, Identifiable {
     public let type: FeedPropertyType
     public let id: String
     public let askingPrice: String?

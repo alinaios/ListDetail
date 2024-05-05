@@ -21,6 +21,10 @@
 		E0B40C382BE545D700EBA791 /* FeedProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C372BE545D700EBA791 /* FeedProperty.swift */; };
 		E0B40C3A2BE5473500EBA791 /* FeedPropertyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C392BE5473500EBA791 /* FeedPropertyMapper.swift */; };
 		E0B40C3C2BE5616F00EBA791 /* FeedProperty+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C3B2BE5616F00EBA791 /* FeedProperty+Ext.swift */; };
+		E0B40C3E2BE7B2C000EBA791 /* PropertyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C3D2BE7B2C000EBA791 /* PropertyListView.swift */; };
+		E0B40C402BE7B3D300EBA791 /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C3F2BE7B3D300EBA791 /* CompositionRoot.swift */; };
+		E0B40C422BE7B54F00EBA791 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C412BE7B54F00EBA791 /* URLSessionHTTPClient.swift */; };
+		E0B40C442BE7B71C00EBA791 /* PropertyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40C432BE7B71C00EBA791 /* PropertyListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		E0B40C372BE545D700EBA791 /* FeedProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedProperty.swift; sourceTree = "<group>"; };
 		E0B40C392BE5473500EBA791 /* FeedPropertyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPropertyMapper.swift; sourceTree = "<group>"; };
 		E0B40C3B2BE5616F00EBA791 /* FeedProperty+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedProperty+Ext.swift"; sourceTree = "<group>"; };
+		E0B40C3D2BE7B2C000EBA791 /* PropertyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListView.swift; sourceTree = "<group>"; };
+		E0B40C3F2BE7B3D300EBA791 /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
+		E0B40C412BE7B54F00EBA791 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		E0B40C432BE7B71C00EBA791 /* PropertyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 		E0B40BE32BE50F2200EBA791 = {
 			isa = PBXGroup;
 			children = (
+				E0B40C3F2BE7B3D300EBA791 /* CompositionRoot.swift */,
 				E0B40BEE2BE50F2200EBA791 /* SampleListDetail */,
 				E0B40C002BE50F2300EBA791 /* SampleListDetailTests */,
 				E0B40C0A2BE50F2300EBA791 /* SampleListDetailUITests */,
@@ -150,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				E0B40C2B2BE516E500EBA791 /* PropertyView.swift */,
+				E0B40C3D2BE7B2C000EBA791 /* PropertyListView.swift */,
+				E0B40C432BE7B71C00EBA791 /* PropertyListViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				E0B40C302BE5456100EBA791 /* HTTPClient.swift */,
+				E0B40C412BE7B54F00EBA791 /* URLSessionHTTPClient.swift */,
 				E0B40C322BE5457A00EBA791 /* RemoteFeedLoader.swift */,
 				E0B40C392BE5473500EBA791 /* FeedPropertyMapper.swift */,
 			);
@@ -311,8 +323,12 @@
 				E0B40C312BE5456100EBA791 /* HTTPClient.swift in Sources */,
 				E0B40BF22BE50F2200EBA791 /* ContentView.swift in Sources */,
 				E0B40BF02BE50F2200EBA791 /* SampleListDetailApp.swift in Sources */,
+				E0B40C402BE7B3D300EBA791 /* CompositionRoot.swift in Sources */,
+				E0B40C442BE7B71C00EBA791 /* PropertyListViewModel.swift in Sources */,
+				E0B40C3E2BE7B2C000EBA791 /* PropertyListView.swift in Sources */,
 				E0B40C332BE5457A00EBA791 /* RemoteFeedLoader.swift in Sources */,
 				E0B40C362BE545B200EBA791 /* PropertyFeedLoader.swift in Sources */,
+				E0B40C422BE7B54F00EBA791 /* URLSessionHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
