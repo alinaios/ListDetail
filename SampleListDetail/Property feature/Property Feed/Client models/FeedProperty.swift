@@ -54,7 +54,7 @@ public struct FeedProperty: Hashable, Identifiable {
         self.description = description
         self.patio = patio
         self.daysSincePublish = daysSincePublish
-
+        
         if let intValue = askingPrice, let formattedPrice = NumberFormatter.spaceGroupingFormatter().string(from: NSNumber(value: intValue)) {
             self.askingPrice = "\(formattedPrice) SEK"
         } else {

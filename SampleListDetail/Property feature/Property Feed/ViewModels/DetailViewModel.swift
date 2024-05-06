@@ -34,20 +34,20 @@ final class DetailViewModel: ObservableObject {
         switch event {
         case .onAppear:
             fetchData()
-
+            
         default:
             break
         }
     }
-   
-    // System states
+    
+    /// System states
     enum State {
         case loading
         case loaded(FeedProperty)
         case error(Error)
     }
-
-    // UI events
+    
+    /// UI events
     enum Event {
         case onAppear
         case onFailedToLoadData(Error)

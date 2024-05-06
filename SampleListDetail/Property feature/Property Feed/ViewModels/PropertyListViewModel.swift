@@ -34,20 +34,19 @@ final class PropertyListViewModel: ObservableObject {
         switch event {
         case .onAppear:
             fetchData()
-
         default:
             break
         }
     }
-   
-    // System states
+    
+    /// System states
     enum State {
         case loadingList
         case loadedList([FeedProperty])
         case error(Error)
     }
-
-    // UI events
+    
+    /// UI events
     enum Event {
         case onAppear
         case onFailedToLoadData(Error)

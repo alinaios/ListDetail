@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailPropertyView: View {
     @ObservedObject var viewModel: DetailViewModel
-
+    
     var body: some View {
         content.onAppear {
             viewModel.send(event: .onAppear)
@@ -32,7 +32,6 @@ struct DetailPropertyView: View {
             VStack(alignment:. leading, spacing: 20) {
                 HStack {
                     imageView(imageURL: model.image)
-                        .border(model.type == .highlightedProperty ? Color.yellow: Color.clear, width: 4)
                 }
                 VStack(alignment:. leading, spacing: 10) {
                     if let street = model.streetAddress {
@@ -40,11 +39,13 @@ struct DetailPropertyView: View {
                             .font(.title2)
                             .bold()
                     }
+                    
                     if let municipalityArea = model.municipalityArea {
                         Text(municipalityArea)
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
+                    
                     if let askingPrice = model.askingPrice {
                         Text(askingPrice)
                             .font(.body)
@@ -61,7 +62,6 @@ struct DetailPropertyView: View {
                             .font(.body)
                             .bold()
                     }
-                    Spacer()
                     
                     if let rooms = model.numberOfRooms {
                         Text("Number of rooms: \(rooms)")
@@ -90,7 +90,7 @@ struct DetailPropertyView: View {
             case .success(let image):
                 image.resizable()
                     .scaledToFill()
-                    .frame(maxWidth: .infinity, maxHeight: 180)
+                    .frame(maxWidth: .infinity, maxHeight: 250)
                     .clipped()
             default:
                 Image(systemName: "globe")

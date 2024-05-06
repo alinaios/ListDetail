@@ -10,7 +10,7 @@ import Foundation
 public protocol PropertyFeedLoader {
     typealias FeedResult = Swift.Result<[FeedProperty], Error>
     typealias DetailResult = Swift.Result<FeedProperty, Error>
-
+    
     func load(completion: @escaping (FeedResult) -> Void)
     
     func load(completion: @escaping (DetailResult) -> Void)

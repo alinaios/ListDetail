@@ -30,7 +30,7 @@ enum FeedPropertyMapper {
         let averagePrice: Int?
         let description: String?
         let patio: String?
-
+        
         enum PropertyType: String, Codable {
             case HighlightedProperty
             case Property
@@ -54,7 +54,7 @@ enum FeedPropertyMapper {
                                 ratingFormatted: ratingFormatted,
                                 averagePrice: averagePrice,
                                 description: description,
-                                patio: patio, 
+                                patio: patio,
                                 daysSincePublish: daysSincePublish)
         }
     }

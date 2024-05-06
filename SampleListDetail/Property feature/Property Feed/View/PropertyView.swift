@@ -22,19 +22,21 @@ struct PropertyView: View {
         VStack(alignment:. leading, spacing: 20) {
             HStack {
                 imageView(imageURL: model.image)
+                    .frame(maxWidth: .infinity, maxHeight: model.type == .highlightedProperty ? 220 : 180)
+                    .clipped()
                     .border(model.type == .highlightedProperty ? Color.yellow: Color.clear, width: 4)
             }
             VStack(alignment:. leading, spacing: 10) {
                 if let street = model.streetAddress {
                     Text(street)
-                    .font(.title2)
-                    .bold()
+                        .font(.title2)
+                        .bold()
                 }
-            if let municipalityArea = model.municipalityArea {
-                Text(municipalityArea)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-            }
+                if let municipalityArea = model.municipalityArea {
+                    Text(municipalityArea)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
                 HStack {
                     if let askingPrice = model.askingPrice {
                         Text(askingPrice)
@@ -49,7 +51,7 @@ struct PropertyView: View {
                             .bold()
                     }
                     Spacer()
-
+                    
                     if let rooms = model.numberOfRooms {
                         Text(rooms)
                             .font(.body)
@@ -66,11 +68,13 @@ struct PropertyView: View {
                 .font(.title)
             HStack {
                 imageView(imageURL: model.image)
+                    .frame(maxWidth: .infinity, maxHeight: 160)
+                    .clipped()
             }
             VStack(alignment:. leading, spacing: 10) {
                 if let municipalityArea = model.municipalityArea {
                     Text(municipalityArea)
-                    .font(.title3)
+                        .font(.title3)
                 }
                 if let rating = model.ratingFormatted {
                     Text(rating).font(.body).bold()
@@ -84,20 +88,17 @@ struct PropertyView: View {
         }.padding()
     }
     
-    private func imageView(imageURL: URL) -> some View{
-            AsyncImage(url: imageURL) { phase in
-                switch phase {
-                case .success(let image):
-                    image.resizable()
-                        .scaledToFill()
-                        .frame(maxWidth: .infinity, maxHeight: 180)
-                        .clipped()
-                default:
-                    Image(systemName: "globe")
-                }
+    private func imageView(imageURL: URL) -> some View {
+        AsyncImage(url: imageURL) { phase in
+            switch phase {
+            case .success(let image):
+                image.resizable()
+                    .scaledToFill()
+            default:
+                Image(systemName: "globe")
             }
         }
-    
+    }
 }
 struct PropertyView_Previews: PreviewProvider {
     static var previews: some View {

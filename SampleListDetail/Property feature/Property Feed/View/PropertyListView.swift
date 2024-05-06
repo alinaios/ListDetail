@@ -51,11 +51,11 @@ struct PropertyListView: View {
     private func elementView(property: FeedProperty) -> some View {
         PropertyView(model: property)
     }
-
+    
     private func emptyResultsView() -> some View {
         Text("No items to display").padding()
     }
-
+    
     private func errorView(error: Error) -> some View {
         VStack(alignment: .center, spacing: 12, content: {
             Text("Failed to load data." )

@@ -122,9 +122,8 @@
 		E0B40BEE2BE50F2200EBA791 /* SampleListDetail */ = {
 			isa = PBXGroup;
 			children = (
+				E0B40C532BE8C16C00EBA791 /* Networking */,
 				E0B40C342BE5459700EBA791 /* Property feature */,
-				E0B40C2F2BE5455400EBA791 /* Property API */,
-				E0B40C2A2BE516CB00EBA791 /* View */,
 				E0B40BEF2BE50F2200EBA791 /* SampleListDetailApp.swift */,
 				E0B40BF12BE50F2200EBA791 /* ContentView.swift */,
 				E0B40BF32BE50F2300EBA791 /* Assets.xcassets */,
@@ -162,8 +161,9 @@
 		E0B40C2A2BE516CB00EBA791 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E0B40C472BE7D05C00EBA791 /* List */,
-				E0B40C482BE7D06500EBA791 /* Detail */,
+				E0B40C2B2BE516E500EBA791 /* PropertyView.swift */,
+				E0B40C3D2BE7B2C000EBA791 /* PropertyListView.swift */,
+				E0B40C452BE7CD4D00EBA791 /* DetailPropertyView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,8 +171,7 @@
 		E0B40C2F2BE5455400EBA791 /* Property API */ = {
 			isa = PBXGroup;
 			children = (
-				E0B40C302BE5456100EBA791 /* HTTPClient.swift */,
-				E0B40C412BE7B54F00EBA791 /* URLSessionHTTPClient.swift */,
+				E0B40C352BE545B200EBA791 /* PropertyFeedLoader.swift */,
 				E0B40C322BE5457A00EBA791 /* RemoteFeedLoader.swift */,
 				E0B40C392BE5473500EBA791 /* FeedPropertyMapper.swift */,
 			);
@@ -182,46 +181,47 @@
 		E0B40C342BE5459700EBA791 /* Property feature */ = {
 			isa = PBXGroup;
 			children = (
-				E0B40C4A2BE7E6B000EBA791 /* Property Detail */,
 				E0B40C492BE7E6A400EBA791 /* Property Feed */,
 			);
 			path = "Property feature";
 			sourceTree = "<group>";
 		};
-		E0B40C472BE7D05C00EBA791 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				E0B40C2B2BE516E500EBA791 /* PropertyView.swift */,
-				E0B40C3D2BE7B2C000EBA791 /* PropertyListView.swift */,
-				E0B40C432BE7B71C00EBA791 /* PropertyListViewModel.swift */,
-			);
-			path = List;
-			sourceTree = "<group>";
-		};
-		E0B40C482BE7D06500EBA791 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				E0B40C452BE7CD4D00EBA791 /* DetailPropertyView.swift */,
-				E0B40C512BE7ED5400EBA791 /* DetailViewModel.swift */,
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
 		E0B40C492BE7E6A400EBA791 /* Property Feed */ = {
 			isa = PBXGroup;
 			children = (
-				E0B40C352BE545B200EBA791 /* PropertyFeedLoader.swift */,
-				E0B40C372BE545D700EBA791 /* FeedProperty.swift */,
-				E0B40C3B2BE5616F00EBA791 /* FeedProperty+Ext.swift */,
+				E0B40C2A2BE516CB00EBA791 /* View */,
+				E0B40C562BE8C1F000EBA791 /* ViewModels */,
+				E0B40C2F2BE5455400EBA791 /* Property API */,
+				E0B40C552BE8C19B00EBA791 /* Client models */,
 			);
 			path = "Property Feed";
 			sourceTree = "<group>";
 		};
-		E0B40C4A2BE7E6B000EBA791 /* Property Detail */ = {
+		E0B40C532BE8C16C00EBA791 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E0B40C302BE5456100EBA791 /* HTTPClient.swift */,
+				E0B40C412BE7B54F00EBA791 /* URLSessionHTTPClient.swift */,
 			);
-			path = "Property Detail";
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E0B40C552BE8C19B00EBA791 /* Client models */ = {
+			isa = PBXGroup;
+			children = (
+				E0B40C372BE545D700EBA791 /* FeedProperty.swift */,
+				E0B40C3B2BE5616F00EBA791 /* FeedProperty+Ext.swift */,
+			);
+			path = "Client models";
+			sourceTree = "<group>";
+		};
+		E0B40C562BE8C1F000EBA791 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E0B40C432BE7B71C00EBA791 /* PropertyListViewModel.swift */,
+				E0B40C512BE7ED5400EBA791 /* DetailViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,6 +530,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SampleListDetail/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Assignment;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -540,7 +542,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
@@ -566,6 +568,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SampleListDetail/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Assignment;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -576,7 +580,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
