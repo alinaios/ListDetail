@@ -34,9 +34,6 @@ final class DetailViewModel: ObservableObject {
         switch event {
         case .onAppear:
             fetchData()
-            
-        default:
-            break
         }
     }
     
@@ -50,6 +47,5 @@ final class DetailViewModel: ObservableObject {
     /// UI events
     enum Event {
         case onAppear
-        case onFailedToLoadData(Error)
     }
 }

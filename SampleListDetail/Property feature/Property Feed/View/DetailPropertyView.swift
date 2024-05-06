@@ -51,12 +51,12 @@ struct DetailPropertyView: View {
                             .font(.body)
                             .bold()
                     }
-                    
+                    Spacer()
                     if let info = model.description {
                         Text(info)
                             .font(.body)
                     }
-                    
+                    Spacer()
                     if let livingArea = model.livingArea {
                         Text("Living area: \(livingArea)")
                             .font(.body)
@@ -91,6 +91,7 @@ struct DetailPropertyView: View {
                 image.resizable()
                     .scaledToFill()
                     .frame(maxWidth: .infinity, maxHeight: 250)
+                    .cornerRadius(4)
                     .clipped()
             default:
                 Image(systemName: "globe")

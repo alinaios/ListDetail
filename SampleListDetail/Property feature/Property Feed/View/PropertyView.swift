@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PropertyView: View {
     @State var model: FeedProperty
-    
+   
     var body: some View {
         if model.type == .area {
             areaPropertyView
@@ -20,12 +20,8 @@ struct PropertyView: View {
     
     private var propertyView: some View {
         VStack(alignment:. leading, spacing: 20) {
-            HStack {
-                imageView(imageURL: model.image)
-                    .frame(maxWidth: .infinity, maxHeight: model.type == .highlightedProperty ? 220 : 180)
-                    .clipped()
-                    .border(model.type == .highlightedProperty ? Color.yellow: Color.clear, width: 4)
-            }
+            imageView(imageURL: model.image)
+
             VStack(alignment:. leading, spacing: 10) {
                 if let street = model.streetAddress {
                     Text(street)
@@ -66,11 +62,7 @@ struct PropertyView: View {
         VStack(alignment:. leading, spacing: 20) {
             Text(model.type.rawValue.capitalized)
                 .font(.title)
-            HStack {
-                imageView(imageURL: model.image)
-                    .frame(maxWidth: .infinity, maxHeight: 160)
-                    .clipped()
-            }
+            imageView(imageURL: model.image)
             VStack(alignment:. leading, spacing: 10) {
                 if let municipalityArea = model.municipalityArea {
                     Text(municipalityArea)
@@ -89,11 +81,27 @@ struct PropertyView: View {
     }
     
     private func imageView(imageURL: URL) -> some View {
-        AsyncImage(url: imageURL) { phase in
+        var imageHeight = CGFloat (160)
+        var borderColor: Color = .clear
+        switch model.type {
+        case .highlightedProperty:
+            imageHeight = CGFloat(220)
+            borderColor = .yellow
+        case .property:
+            imageHeight = CGFloat(180)
+        case .area:
+            break
+        }
+        return AsyncImage(url: imageURL) { phase in
             switch phase {
             case .success(let image):
                 image.resizable()
                     .scaledToFill()
+                    .frame(maxWidth: .infinity, maxHeight: imageHeight)
+                    .border(borderColor, width: 4)
+                    .cornerRadius(4)
+                    .clipped()
+
             default:
                 Image(systemName: "globe")
             }

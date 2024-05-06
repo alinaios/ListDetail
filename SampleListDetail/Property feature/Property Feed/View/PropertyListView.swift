@@ -30,20 +30,19 @@ struct PropertyListView: View {
     
     private func loadedListView(list: [FeedProperty]) -> some View {
         return NavigationStack {
-            VStack {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 20, content: {
-                        ForEach(list.indices, id: \.self) { index in
-                            if index == 0 {
-                                NavigationLink(destination: DetailPropertyView(viewModel: detailViewModel)) {
-                                    elementView(property: list[index])
-                                }
-                            } else {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20, content: {
+                    Spacer()
+                    ForEach(list.indices, id: \.self) { index in
+                        if index == 0 {
+                            NavigationLink(destination: DetailPropertyView(viewModel: detailViewModel)) {
                                 elementView(property: list[index])
                             }
+                        } else {
+                            elementView(property: list[index])
                         }
-                    }).padding()
-                }
+                    }
+                })
             }
         }
     }

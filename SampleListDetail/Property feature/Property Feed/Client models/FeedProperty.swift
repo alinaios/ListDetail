@@ -61,7 +61,7 @@ public struct FeedProperty: Hashable, Identifiable {
             self.askingPrice = nil
         }
         if let municipality = municipality {
-            self.municipalityArea = "\(municipality), \(area)"
+            self.municipalityArea = "\(area), \(municipality)"
         } else {
             municipalityArea = area
         }

@@ -34,8 +34,6 @@ final class PropertyListViewModel: ObservableObject {
         switch event {
         case .onAppear:
             fetchData()
-        default:
-            break
         }
     }
     
@@ -49,6 +47,5 @@ final class PropertyListViewModel: ObservableObject {
     /// UI events
     enum Event {
         case onAppear
-        case onFailedToLoadData(Error)
     }
 }
