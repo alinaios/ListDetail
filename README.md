@@ -7,8 +7,8 @@ Applied MVVM
 iOS - 16.0
 SwiftUI
 Coverage - 59%
-<img width="606" alt="Screenshot 2024-05-07 at 12 12 15" src="https://github.com/alinaios/ListDetail/assets/85871814/f36dbf22-4022-4c54-9f12-9fe5279f3c53">
 
+<img width="606" alt="Screenshot 2024-05-07 at 12 12 15" src="https://github.com/alinaios/ListDetail/assets/85871814/f36dbf22-4022-4c54-9f12-9fe5279f3c53">
 
 ### Scenarios (Acceptance Criteria)
 
