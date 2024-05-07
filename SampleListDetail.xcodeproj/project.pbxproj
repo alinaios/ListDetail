@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0357A002BEA33210052C7D2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E03579FF2BEA33210052C7D2 /* README.md */; };
 		E0B40BF02BE50F2200EBA791 /* SampleListDetailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40BEF2BE50F2200EBA791 /* SampleListDetailApp.swift */; };
 		E0B40BF22BE50F2200EBA791 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B40BF12BE50F2200EBA791 /* ContentView.swift */; };
 		E0B40BF42BE50F2300EBA791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B40BF32BE50F2300EBA791 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E03579FF2BEA33210052C7D2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E0B40BEC2BE50F2200EBA791 /* SampleListDetail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleListDetail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B40BEF2BE50F2200EBA791 /* SampleListDetailApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleListDetailApp.swift; sourceTree = "<group>"; };
 		E0B40BF12BE50F2200EBA791 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		E0B40BE32BE50F2200EBA791 = {
 			isa = PBXGroup;
 			children = (
+				E03579FF2BEA33210052C7D2 /* README.md */,
 				E0B40C3F2BE7B3D300EBA791 /* CompositionRoot.swift */,
 				E0B40BEE2BE50F2200EBA791 /* SampleListDetail */,
 				E0B40C002BE50F2300EBA791 /* SampleListDetailTests */,
@@ -334,6 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0357A002BEA33210052C7D2 /* README.md in Resources */,
 				E0B40BF82BE50F2300EBA791 /* Preview Assets.xcassets in Resources */,
 				E0B40BF42BE50F2300EBA791 /* Assets.xcassets in Resources */,
 			);
