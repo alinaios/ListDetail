@@ -26,11 +26,16 @@ Given application has internet connection
 When user launches the application
 User can preview list of properties 
 When user taps first property
-User is navigated to preview only first property
+User is navigated to preview the first property
+```
+``` 
+Given application has internet connection
+When user launches the application
+User can preview list of properties 
+When user taps second property
+No navigation is available for all properties except first
 ```
 
-``` 
-Given application has NO internet connection
-When user taps any specific show
-User is shown a message about no internet connection
-```
+https://github.com/alinaios/ListDetail/assets/85871814/9c6085a8-9e08-41a1-97fa-2a96f8b4da92
+
+
