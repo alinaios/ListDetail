@@ -38,6 +38,19 @@ final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
         }
     }
     
+    func test_load_deliversInvalidDataErrorOnNon200HTTPResponseOnDetail() {
+        let (sut, client) = makeSUT()
+
+        let samples = [199, 201, 300, 400, 500]
+
+        samples.enumerated().forEach { index, code in
+            expectItem(sut, toCompleteWith: .failure(.invalidData), when: {
+                let json = makePropertyJSON(["String" : "Any"])
+                client.complete(withStatusCode: code, data: json, at: index)
+            })
+        }
+    }
+    
     func test_load_deliversSuccessWithItemsOn200HTTPResponseWithJSONItems() {
         let (sut, client) = makeSUT()
 
@@ -49,6 +62,17 @@ final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
 
         expect(sut, toCompleteWith: .success(items), when: {
             let json = makeItemsJSON([item1.json, item2.json])
+            client.complete(withStatusCode: 200, data: json)
+        })
+    }
+    
+    func test_load_deliversSuccessWithItemsOn200HTTPResponseWithJSONItem() {
+        let (sut, client) = makeSUT()
+
+        let item = makeItem(id: "111", area: "area", imageURL: "http://a-url.com")
+
+        expectItem(sut, toCompleteWith: .success(item.model), when: {
+            let json = makePropertyJSON(item.json)
             client.complete(withStatusCode: 200, data: json)
         })
     }
@@ -85,6 +109,10 @@ final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
         return try! JSONSerialization.data(withJSONObject: json)
     }
     
+    private func makePropertyJSON(_ item: [String: Any]) -> Data {
+        return try! JSONSerialization.data(withJSONObject: item)
+    }
+    
     private func makeItem(id: String, area: String, imageURL: String) -> (model: FeedProperty, json: [String: Any]) {
         let item = FeedProperty(type: .property, id: id, area: area, image: imageURL)
 
@@ -100,6 +128,29 @@ final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
 }
 extension LoadFeedFromRemoteUseCaseTests {
     func expect(_ sut: RemoteFeedLoader, toCompleteWith expectedResult: Result<[FeedProperty], RemoteFeedLoader.Error>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
+        let exp = expectation(description: "Wait for load completion")
+
+        sut.load { receivedResult in
+            switch (receivedResult, expectedResult) {
+            case let (.success(receivedItems), .success(expectedItems)):
+                XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
+
+            case let (.failure(receivedError as RemoteFeedLoader.Error), .failure(expectedError)):
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+
+            default:
+                XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
+            }
+
+            exp.fulfill()
+        }
+
+        action()
+
+        waitForExpectations(timeout: 0.1)
+    }
+    
+    func expectItem(_ sut: RemoteFeedLoader, toCompleteWith expectedResult: Result<FeedProperty, RemoteFeedLoader.Error>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
         let exp = expectation(description: "Wait for load completion")
 
         sut.load { receivedResult in
