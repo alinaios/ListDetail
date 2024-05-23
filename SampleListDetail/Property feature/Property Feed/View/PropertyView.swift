@@ -29,25 +29,25 @@ struct PropertyView: View {
                         .bold()
                 }
                 
-                Text(model.municipalityArea)
+                Text(model.formattedMunicipalityArea)
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 HStack {
-                    if let askingPrice = model.askingPrice {
+                    if let askingPrice = model.formattedAskingPrice {
                         Text(askingPrice)
                             .font(.body)
                             .bold()
                     }
                     Spacer()
                     
-                    if let livingArea = model.livingArea {
+                    if let livingArea = model.formattedLivingArea {
                         Text(livingArea)
                             .font(.body)
                             .bold()
                     }
                     Spacer()
                     
-                    if let rooms = model.numberOfRooms {
+                    if let rooms = model.formattedNumberOfRooms {
                         Text(rooms)
                             .font(.body)
                             .bold()
@@ -63,12 +63,12 @@ struct PropertyView: View {
                 .font(.title)
             imageView(imageURL: model.image)
             VStack(alignment:. leading, spacing: 10) {
-                Text(model.municipalityArea)
+                Text(model.formattedMunicipalityArea)
                         .font(.title3)
-                if let rating = model.ratingFormatted {
+                if let rating = model.formattedRating {
                     Text(rating).font(.body).bold()
                 }
-                if let averagePrice = model.averagePrice {
+                if let averagePrice = model.formattedAveragePrice {
                     Text(averagePrice)
                         .font(.body)
                         .bold()

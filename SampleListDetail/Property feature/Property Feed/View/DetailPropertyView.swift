@@ -41,11 +41,11 @@ struct DetailPropertyView: View {
                             .bold()
                     }
                     
-                    Text(model.municipalityArea)
+                    Text(model.formattedMunicipalityArea)
                         .font(.subheadline)
                         .foregroundColor(.gray)
                     
-                    if let askingPrice = model.askingPrice {
+                    if let askingPrice = model.formattedAskingPrice {
                         Text(askingPrice)
                             .font(.body)
                             .bold()
@@ -60,13 +60,13 @@ struct DetailPropertyView: View {
                     
                     Spacer()
                     
-                    if let livingArea = model.livingArea {
+                    if let livingArea = model.formattedLivingArea {
                         Text("Living area: \(livingArea)")
                             .font(.body)
                             .bold()
                     }
                     
-                    if let rooms = model.numberOfRooms {
+                    if let rooms = model.formattedNumberOfRooms {
                         Text("Number of rooms: \(rooms)")
                             .font(.body)
                             .bold()
