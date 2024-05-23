@@ -16,47 +16,50 @@ struct DetailPropertyView: View {
         }
     }
     
+    @ViewBuilder
     private var content: some View {
         switch viewModel.state {
         case .loading:
-            return ProgressView().eraseToAnyView()
+            ProgressView()
         case .loaded(let model):
-            return detailView(model: model).eraseToAnyView()
+            detailView(model: model)
         case .error(let error):
-            return errorView(error: error).eraseToAnyView()
+            errorView(error: error)
         }
     }
     
-    private func detailView(model: FeedProperty) -> some View  {
+    private func detailView(model: FeedProperty) -> some View {
         ScrollView {
-            VStack(alignment:. leading, spacing: 20) {
+            VStack(alignment: .leading, spacing: 20) {
                 HStack {
                     imageView(imageURL: model.image)
                 }
-                VStack(alignment:. leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 10) {
                     if let street = model.streetAddress {
                         Text(street)
                             .font(.title2)
                             .bold()
                     }
                     
-                    if let municipalityArea = model.municipalityArea {
-                        Text(municipalityArea)
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
+                    Text(model.municipalityArea)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
                     
                     if let askingPrice = model.askingPrice {
                         Text(askingPrice)
                             .font(.body)
                             .bold()
                     }
+                    
                     Spacer()
+                    
                     if let info = model.description {
                         Text(info)
                             .font(.body)
                     }
+                    
                     Spacer()
+                    
                     if let livingArea = model.livingArea {
                         Text("Living area: \(livingArea)")
                             .font(.body)
@@ -68,11 +71,13 @@ struct DetailPropertyView: View {
                             .font(.body)
                             .bold()
                     }
+                    
                     if let patio = model.patio {
                         Text("Patio: \(patio)")
                             .font(.body)
                             .bold()
                     }
+                    
                     if let daysSince = model.daysSincePublish {
                         Text("Days since publish: \(daysSince)")
                             .font(.body)
@@ -80,10 +85,11 @@ struct DetailPropertyView: View {
                     }
                 }
                 Spacer()
-            }.padding()
+            }
+            .padding()
         }
     }
-    
+
     private func imageView(imageURL: URL) -> some View{
         AsyncImage(url: imageURL) { phase in
             switch phase {

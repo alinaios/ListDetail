@@ -17,14 +17,15 @@ struct PropertyListView: View {
         }
     }
     
+    @ViewBuilder
     private var content: some View {
         switch viewModel.state {
         case .loadingList:
-            return ProgressView().eraseToAnyView()
+            ProgressView()
         case .loadedList(let list):
-            return loadedListView(list: list).eraseToAnyView()
+            loadedListView(list: list)
         case .error(let error):
-            return errorView(error: error).eraseToAnyView()
+            errorView(error: error)
         }
     }
     
@@ -63,8 +64,4 @@ struct PropertyListView: View {
             }
         }).padding()
     }
-}
-
-extension View {
-    func eraseToAnyView() -> AnyView { AnyView(self) }
 }

@@ -28,11 +28,10 @@ struct PropertyView: View {
                         .font(.title2)
                         .bold()
                 }
-                if let municipalityArea = model.municipalityArea {
-                    Text(municipalityArea)
+                
+                Text(model.municipalityArea)
                         .font(.subheadline)
                         .foregroundColor(.gray)
-                }
                 HStack {
                     if let askingPrice = model.askingPrice {
                         Text(askingPrice)
@@ -64,10 +63,8 @@ struct PropertyView: View {
                 .font(.title)
             imageView(imageURL: model.image)
             VStack(alignment:. leading, spacing: 10) {
-                if let municipalityArea = model.municipalityArea {
-                    Text(municipalityArea)
+                Text(model.municipalityArea)
                         .font(.title3)
-                }
                 if let rating = model.ratingFormatted {
                     Text(rating).font(.body).bold()
                 }

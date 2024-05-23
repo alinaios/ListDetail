@@ -17,11 +17,13 @@ public enum FeedPropertyType: String, Codable {
     case area
 }
 
+import Foundation
+
 public struct FeedProperty: Hashable, Identifiable {
     public let type: FeedPropertyType
     public let id: String
     public let askingPrice: String?
-    public let municipalityArea: String?
+    public let municipalityArea: String
     public let livingArea: String?
     public let numberOfRooms: String?
     public let streetAddress: String?
@@ -55,42 +57,25 @@ public struct FeedProperty: Hashable, Identifiable {
         self.patio = patio
         self.daysSincePublish = daysSincePublish
         
-        if let intValue = askingPrice, let formattedPrice = NumberFormatter.spaceGroupingFormatter().string(from: NSNumber(value: intValue)) {
-            self.askingPrice = "\(formattedPrice) SEK"
-        } else {
-            self.askingPrice = nil
-        }
-        if let municipality = municipality {
-            self.municipalityArea = "\(area), \(municipality)"
-        } else {
-            municipalityArea = area
-        }
-        if let intValue = livingArea {
-            self.livingArea = "\(intValue) m²"
-        } else {
-            self.livingArea = nil
-        }
+        self.askingPrice = askingPrice.map { NumberFormatter.spaceGroupingFormatter().string(from: NSNumber(value: $0))! + " SEK" }
         
-        if let intValue = numberOfRooms {
-            self.numberOfRooms = "\(intValue) rooms"
-        } else {
-            self.numberOfRooms = nil
-        }
+        self.municipalityArea = municipality.map { "\(area), \($0)" } ?? area
+        
+        self.livingArea = livingArea.map { "\($0) m²" }
+        
+        self.numberOfRooms = numberOfRooms.map { "\($0) rooms" }
         
         self.streetAddress = streetAddress
-        self.image = URL(string: image)!
+        
+        self.image = URL(string: image) ?? {
+            fatalError("Invalid URL string: \(image)")
+        }()
+        
         self.monthlyFee = monthlyFee
         
-        if let rating = ratingFormatted {
-            self.ratingFormatted = "Rating: \(rating)"
-        } else {
-            self.ratingFormatted = nil
-        }
-        if let intValue = averagePrice, let formattedPrice = NumberFormatter.spaceGroupingFormatter().string(from: NSNumber(value: intValue)) {
-            self.averagePrice = "Average price: \(formattedPrice) m²"
-        } else {
-            self.averagePrice = nil
-        }
+        self.ratingFormatted = ratingFormatted.map { "Rating: \($0)" }
+        
+        self.averagePrice = averagePrice.map { NumberFormatter.spaceGroupingFormatter().string(from: NSNumber(value: $0))! + " m²" }
     }
 }
 
